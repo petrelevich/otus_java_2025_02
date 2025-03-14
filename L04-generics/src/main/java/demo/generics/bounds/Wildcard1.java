@@ -32,9 +32,11 @@ public class Wildcard1 {
     // Нельзя передать сюда List<Cat>
     private static void print(List<Animal> animalList) {
         animalList.forEach(animal -> logger.info("{}", animal));
+        animalList.add(new Animal()); // работает, ошибок нет
     }
 
     private static void printWild(List<? extends Animal> animalList) {
         animalList.forEach(animal -> logger.info("{}", animal));
+        // animalList.add(new Animal()); // не работает, ошибка компиляции
     }
 }

@@ -28,6 +28,7 @@ public class GenericsBounded<T extends Cat> {
     }
 
     private void action() {
+        // В поле this.cat всегда Cat с методом getMyau()
         String actionResult = cat.getMyau();
         logger.info("actionResult:{}", actionResult);
     }

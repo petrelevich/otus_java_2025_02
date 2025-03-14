@@ -17,7 +17,7 @@ public class WildcardPECS {
 
         List<Animal> animalList = new ArrayList<>();
         animalList.add(new Animal());
-        // printProducer(animalList); //ошибка
+       //  printProducer(animalList); //ошибка
         printConsumer(animalList);
 
         List<Cat> catList = new ArrayList<>();
@@ -29,32 +29,33 @@ public class WildcardPECS {
         List<HomeCat> homeCatList = new ArrayList<>();
         homeCatList.add(new HomeCat("homeCat"));
         printProducer(homeCatList);
-        // printConsumer(homeCatList); //ошибка
+//         printConsumer(homeCatList); //ошибка
 
     }
 
-    // Принцип PECS - Producer Extends Consumer Super
+    // Принцип PECS - Producer ("read") Extends Consumer ("write") Super
     private static void printProducer(List<? extends Cat> catList) {
-        // catList.add(new Object()); //Ошибка
-        // catList.add(new Animal()); //Ошибка
-        // catList.add(new Cat()); //Ошибка
-        // catList.add(new HomeCat("f")); //Ошибка
-        // catList.add(new WildCat("w")); //Ошибка
+//         catList.add(new Object()); //Ошибка
+//         catList.add(new Animal()); //Ошибка
+//         catList.add(new Cat()); //Ошибка
+//         catList.add(new HomeCat("f")); //Ошибка
+//         catList.add(new WildCat("w")); //Ошибка
 
-        Cat item = catList.get(0);
+        Cat item = catList.getFirst(); // Тип Cat !!!
+        logger.info("item from the list:{}", item);
 
         catList.forEach(cat -> logger.info("Myau:{}", cat.getMyau()));
     }
 
-    // Принцип PECS - Producer Extends Consumer Super
+    // Принцип PECS - Producer ("read") Extends Consumer ("write") Super
     private static void printConsumer(List<? super Cat> catList) {
-        // catList.add(new Object());// Ошибка
-        // catList.add(new Animal());// Ошибка
+//         catList.add(new Object());// Ошибка
+//         catList.add(new Animal());// Ошибка
         catList.add(new Cat());
         catList.add(new HomeCat("noName"));
         catList.add(new WildCat("wild"));
 
-        Object item = catList.getFirst();
+        Object item = catList.getFirst(); // Тип Object !!!
         logger.info("item from the list:{}", item);
 
         catList.forEach(something -> logger.info("{}", something));
