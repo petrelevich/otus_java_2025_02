@@ -8,7 +8,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@SuppressWarnings({"unchecked", "rawtypes"})
+@SuppressWarnings({"unchecked", "rawtypes", "java:S125"})
 public class Wildcard2 {
     private static final Logger logger = LoggerFactory.getLogger(Wildcard2.class);
 
@@ -68,5 +68,4 @@ public class Wildcard2 {
         animalList.add(null);
         animalList.forEach(animal -> logger.info("{}", animal));
     }
-
 }
