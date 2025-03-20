@@ -40,7 +40,9 @@ public class TypeErasureBounded {
         var node = new NodeBounded<String>("first node", null);
 
         var clazz = node.getClass();
-        System.out.println("Class generic parameters: " + Arrays.toString(clazz.getTypeParameters()));
+        var typeParameters = clazz.getTypeParameters();
+        System.out.println("Class generic parameters: " + Arrays.toString(typeParameters));
+        System.out.println("First parameter bound: " + typeParameters[0].getBounds()[0].getTypeName());
 
         Field field = clazz.getDeclaredField("data");
         System.out.println("'data' field type: " + field.getType().getCanonicalName());
