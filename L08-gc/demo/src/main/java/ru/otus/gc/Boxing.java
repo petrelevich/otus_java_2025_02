@@ -15,8 +15,8 @@ public class Boxing {
     private static final Logger log = LoggerFactory.getLogger(Boxing.class);
 
     public static void main(String[] args) throws InterruptedException {
-        calcInteger();
-        // calcInt();
+        // calcInteger();
+        calcInt();
         log.info("done");
     }
 
