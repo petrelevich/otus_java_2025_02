@@ -40,7 +40,8 @@ public class MyClassLoaderDemo {
         }
 
         String getFileName(String className) {
-            return "myClass" + File.separator + className.substring(className.lastIndexOf('.') + 1) + ".class";
+            return "L10-byteCodes/myClass" + File.separator + className.substring(className.lastIndexOf('.') + 1)
+                    + ".class";
         }
     }
 }
