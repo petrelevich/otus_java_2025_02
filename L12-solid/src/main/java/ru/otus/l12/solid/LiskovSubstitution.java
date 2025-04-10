@@ -27,6 +27,7 @@ public class LiskovSubstitution {
         rectangle.setWidth(width);
 
         logger.info("--- Rectangle rectangle = new Rectangle();");
+        logger.info("area:{}", rectangle.area());
         logger.info("height:{}, rectangle.height:{}", height, rectangle.height);
         logger.info("width:{}, rectangle.width:{}", width, rectangle.width);
 
@@ -36,6 +37,7 @@ public class LiskovSubstitution {
 
         logger.info("");
         logger.info("--- Rectangle rectangleStrange = new Square();");
+        logger.info("area:{}", rectangleStrange.area());
         logger.info("height:{}, rectangleStrange.height:{}", height, rectangleStrange.height);
         logger.info("width:{}, rectangleStrange.width:{}", width, rectangleStrange.width);
     }
