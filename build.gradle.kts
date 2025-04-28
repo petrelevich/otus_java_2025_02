@@ -68,6 +68,7 @@ allprojects {
             force("org.apache.commons:commons-compress:1.26.1")
             force("com.google.errorprone:error_prone_annotations:2.36.0")
             force("org.jetbrains:annotations:19.0.0")
+            force("com.google.j2objc:j2objc-annotations:3.0.0")
         }
     }
 }
