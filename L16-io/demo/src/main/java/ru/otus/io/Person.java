@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 // implements Serializable - обязательное условие для сериализации
 public class Person implements Serializable {
     private static final Logger logger = LoggerFactory.getLogger(Person.class);
-    private static final long serialVersionUID = 1L; // не забывайте про serialVersionUID
+//    private static final long serialVersionUID = 1L; // не забывайте про serialVersionUID
     private final int age;
     private final String name;
     private final transient String hidden; // transient - поле будет пропущено при сериализации
