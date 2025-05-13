@@ -57,22 +57,6 @@ public class EncapsusationDemo {
         // чтобы избежать подобных ситуаций?
         // см. код ниже ...
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         company.addDepartment(depart);
         // company.removeDepartment(depart);
 
