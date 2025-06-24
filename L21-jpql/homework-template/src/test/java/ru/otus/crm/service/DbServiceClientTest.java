@@ -53,6 +53,6 @@ class DbServiceClientTest extends AbstractHibernateTest {
 
         // then
         assertThat(clientList).hasSize(1);
-        assertThat(clientList.get(0)).usingRecursiveComparison().isEqualTo(loadedClient.get());
+        assertThat(clientList.getFirst()).usingRecursiveComparison().isEqualTo(loadedClient.get());
     }
 }

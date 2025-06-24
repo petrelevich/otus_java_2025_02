@@ -18,11 +18,14 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.otus.crm.model.Address;
 import ru.otus.crm.model.Client;
 import ru.otus.crm.model.Phone;
 
 class HomeworkTest {
+    private static final Logger logger = LoggerFactory.getLogger(HomeworkTest.class);
 
     private StandardServiceRegistry serviceRegistry;
     private Metadata metadata;
@@ -31,12 +34,12 @@ class HomeworkTest {
     // Кроме удаления @Disabled, тестовый класс менять нельзя
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         makeTestDependencies();
     }
 
     @AfterEach
-    public void tearDown() {
+    void tearDown() {
         sessionFactory.close();
     }
 
@@ -173,7 +176,7 @@ class HomeworkTest {
             field.setAccessible(true);
             field.set(jdbcServices, customSqlStatementLogger);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("error", e);
         }
     }
 }
