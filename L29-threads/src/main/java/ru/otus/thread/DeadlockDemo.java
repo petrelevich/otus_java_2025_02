@@ -29,7 +29,7 @@ public class DeadlockDemo {
         t2.start();
 
         sleep();
-        logger.info("findDeadlockedThreads");
+        logger.info("start search Deadlocked Threads");
         long[] threads = ManagementFactory.getThreadMXBean().findDeadlockedThreads();
         if (threads != null) {
             ThreadInfo[] threadInfo = ManagementFactory.getThreadMXBean().getThreadInfo(threads);
