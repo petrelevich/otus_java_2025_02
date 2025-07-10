@@ -72,8 +72,7 @@ public class ExecutorServiceDemo {
 
     void scheduledThreadPoolExecutor() {
         // Заданное количество потоков выполняют задачи с задержкой или периодически
-        try (ScheduledExecutorService executor = Executors.newScheduledThreadPool(1)) {
-            executor.scheduleAtFixedRate(() -> logger.info("task is done"), 0, 3, TimeUnit.SECONDS);
-        }
+        ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+        executor.scheduleAtFixedRate(() -> logger.info("task is done"), 0, 3, TimeUnit.SECONDS);
     }
 }
