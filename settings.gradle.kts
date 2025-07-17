@@ -60,6 +60,9 @@ include ("L29-threads")
 include ("L30-JMM")
 include ("L31-executors")
 
+include ("L33-virtualThreads:base")
+include ("L33-virtualThreads:springBoot")
+
 pluginManagement {
     val jgitver: String by settings
     val dependencyManagement: String by settings

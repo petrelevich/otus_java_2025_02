@@ -70,9 +70,12 @@ public class ExecutorServiceDemo {
         }
     }
 
-    void scheduledThreadPoolExecutor() {
+    void scheduledThreadPoolExecutor() throws InterruptedException {
         // Заданное количество потоков выполняют задачи с задержкой или периодически
-        ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
-        executor.scheduleAtFixedRate(() -> logger.info("task is done"), 0, 3, TimeUnit.SECONDS);
+        try (ScheduledExecutorService executor = Executors.newScheduledThreadPool(1)) {
+            executor.scheduleAtFixedRate(() -> logger.info("task is done"), 0, 3, TimeUnit.SECONDS);
+            var terminationResult = executor.awaitTermination(10, TimeUnit.SECONDS);
+            logger.info("terminationResult:{}", terminationResult);
+        }
     }
 }
